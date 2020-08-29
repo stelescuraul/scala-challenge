@@ -3,9 +3,7 @@ package dixa.test
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.common.EntityStreamingSupport
-import akka.http.scaladsl.server.{RejectionHandler, Route}
-import akka.http.scaladsl.model.StatusCodes._
+import akka.http.scaladsl.server.{Route}
 import akka.http.scaladsl.server.Directives._
 
 import scala.io.StdIn

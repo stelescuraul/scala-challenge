@@ -1,9 +1,11 @@
 package dixa.test
 
-object Hello extends Greeting with App {
-  println(greeting)
-}
 
-trait Greeting {
-  lazy val greeting: String = "hello"
+object PrimeMain {
+
+  def main(args: Array[String]): Unit = {
+    ProxyService.run()
+  }
+
+
 }

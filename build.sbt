@@ -1,7 +1,7 @@
 lazy val akkaHttpVersion = "10.1.12"
 lazy val akkaVersion    = "2.6.8"
 
-ThisBuild / scalaVersion     := "2.12.8"
+ThisBuild / scalaVersion     := "2.13.3"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 ThisBuild / organization     := "com.dixa"
 ThisBuild / organizationName := "test"

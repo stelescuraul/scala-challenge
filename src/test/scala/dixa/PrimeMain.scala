@@ -1,4 +1,4 @@
-package example
+package dixa.test
 
 import org.scalatest._
 

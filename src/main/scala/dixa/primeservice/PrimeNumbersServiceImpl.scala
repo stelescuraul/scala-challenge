@@ -1,9 +1,8 @@
-package com.dixa
+package dixa.primeservice
 
 import akka.NotUsed
 import akka.actor.typed.ActorSystem
 import akka.stream.scaladsl.Source
-
 import com.dixa.grpc._
 
 class PrimeNumbersServiceImpl(system: ActorSystem[_]) extends  PrimeNumbersService {

@@ -1,4 +1,4 @@
-package com.dixa
+package dixa.primeservice
 
 object PrimeCalculator {
 

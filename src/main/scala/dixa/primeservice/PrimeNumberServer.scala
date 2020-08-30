@@ -1,15 +1,14 @@
-package com.dixa
+package dixa.primeservice
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
-import akka.http.scaladsl.{Http}
+import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
 import com.typesafe.config.ConfigFactory
-
 import scala.concurrent.{ExecutionContext, Future}
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
-import com.dixa.grpc._
+import com.dixa.grpc.PrimeNumbersServiceHandler
 
 object PrimeNumberServer {
   def main(args: Array[String]): Unit = {

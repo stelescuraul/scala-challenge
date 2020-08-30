@@ -1,4 +1,4 @@
-package dixa.test
+package com.dixa
 
 import akka.http.scaladsl.model.{ HttpEntity, HttpResponse, MediaTypes}
 import akka.http.scaladsl.server.Directives._

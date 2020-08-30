@@ -1,4 +1,4 @@
-package dixa.test
+package com.dixa
 
 import akka.http.scaladsl.model.StatusCodes.NotFound
 import akka.http.scaladsl.server.Directives.complete

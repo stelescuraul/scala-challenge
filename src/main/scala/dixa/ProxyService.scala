@@ -2,9 +2,12 @@ package com.dixa
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
+import akka.grpc.GrpcClientSettings
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.{Route}
+import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.server.Directives._
+import akka.stream.ActorMaterializer
+import com.dixa.grpc.{PrimeNumbersService, PrimeNumbersServiceClient}
 
 import scala.io.StdIn
 
@@ -15,13 +18,16 @@ object ProxyService {
   }
 
   def run(): Unit = {
-    implicit val system = ActorSystem(Behaviors.empty, "my-system")
+    implicit val system = ActorSystem(Behaviors.empty, "proxy-service")
     implicit val executionContext = system.executionContext
+
+    val clientSettings = GrpcClientSettings.connectToServiceAt("localhost", 8082).withTls(false);
+    val client: PrimeNumbersService = PrimeNumbersServiceClient(clientSettings)
 
     // These would also be moved to their own file(s) for route definitions
     val topLevelRoute: Route = handleRejections(RejectionHandlers.rejectionHandler) {
       concat(
-        path("prime" / IntNumber)(PrimeRouteHandlers.primeCalculatorHandler),
+        path("prime" / IntNumber)(PrimeRouteHandlers.primeCalculatorHandler(_, client)),
       )
     }
 

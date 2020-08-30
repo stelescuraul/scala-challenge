@@ -7,7 +7,11 @@
 and
 > `sbt "runMain challenge.proxy.ProxyService"`
 
+**Go to `localhost:8080/prime/50000` in your browser to see it working. Please use a large enough number in order to see the stream event :)**
 
+<br>
+
+## Implementation
 I have managed to implement the following:
 - Prime Service has the following:
   - PrimeCalculator.scala which computes a LazyList of primes
@@ -21,6 +25,10 @@ I have managed to implement the following:
 
 I have only managed to test the `PrimeCalculator` which validates the prime calculations. I did not have enough time to research testing methodology for akka-specific functionality (http service and gRPC service).
 
+
+<br>
+
+## Discussion
 gRPC server is running on port 8082 and http server is running on 8080. There are some improvements that obviously need to be done for production-ready state such as: using environment variables for port allocation, gRPC server location etc.
 
 sbt is complaining about some package incompatibility which is coming from `akka-stream` and `akka-discovery` packages which I had to manually set the version for. These are coming from gRPC. I did not spend time to research and fix this issue since the services work fine for the purpose of this challenge.

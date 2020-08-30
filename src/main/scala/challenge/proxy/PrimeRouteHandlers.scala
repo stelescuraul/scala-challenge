@@ -1,4 +1,4 @@
-package dixa.proxy
+package challenge.proxy
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.marshalling.{Marshaller, ToResponseMarshaller}
@@ -7,7 +7,8 @@ import akka.http.scaladsl.model.{HttpEntity, HttpResponse, MediaTypes}
 import akka.http.scaladsl.server.Directives.{complete, concat, get}
 import akka.http.scaladsl.server.Route
 import akka.stream.scaladsl.Source
-import com.dixa.grpc.{PrimeNumbersService, PrimeReply, PrimeRequest}
+
+import com.challenge.grpc._
 
 object PrimeRouteHandlers {
 

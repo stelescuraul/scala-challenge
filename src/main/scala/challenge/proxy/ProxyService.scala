@@ -1,4 +1,4 @@
-package dixa.proxy
+package challenge.proxy
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
@@ -6,9 +6,10 @@ import akka.grpc.GrpcClientSettings
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import com.dixa.grpc.{PrimeNumbersService, PrimeNumbersServiceClient}
 
 import scala.io.StdIn
+
+import com.challenge.grpc._
 
 object ProxyService {
 

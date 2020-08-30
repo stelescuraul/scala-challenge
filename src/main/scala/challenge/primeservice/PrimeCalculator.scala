@@ -1,4 +1,4 @@
-package dixa.primeservice
+package challenge.primeservice
 
 object PrimeCalculator {
 

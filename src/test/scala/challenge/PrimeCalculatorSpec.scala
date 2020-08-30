@@ -1,6 +1,6 @@
-package com.dixa
+package challenge
 
-import dixa.primeservice.PrimeCalculator
+import challenge.primeservice.PrimeCalculator
 import org.scalatest._
 
 class PrimeCalculatorSpec extends  FlatSpec with Matchers {

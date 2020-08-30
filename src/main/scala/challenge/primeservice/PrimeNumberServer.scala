@@ -1,4 +1,4 @@
-package dixa.primeservice
+package challenge.primeservice
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
@@ -8,7 +8,8 @@ import com.typesafe.config.ConfigFactory
 import scala.concurrent.{ExecutionContext, Future}
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
-import com.dixa.grpc.PrimeNumbersServiceHandler
+
+import com.challenge.grpc._
 
 object PrimeNumberServer {
   def main(args: Array[String]): Unit = {

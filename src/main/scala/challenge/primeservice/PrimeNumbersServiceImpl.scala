@@ -1,9 +1,10 @@
-package dixa.primeservice
+package challenge.primeservice
 
 import akka.NotUsed
 import akka.actor.typed.ActorSystem
 import akka.stream.scaladsl.Source
-import com.dixa.grpc._
+
+import com.challenge.grpc._
 
 class PrimeNumbersServiceImpl(system: ActorSystem[_]) extends  PrimeNumbersService {
   private implicit val sys: ActorSystem[_] = system

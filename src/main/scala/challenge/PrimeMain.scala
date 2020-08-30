@@ -1,7 +1,7 @@
-package com.dixa
+package challenge
 
-import dixa.primeservice.PrimeNumberServer
-import dixa.proxy.ProxyService
+import challenge.primeservice.PrimeNumberServer
+import challenge.proxy.ProxyService
 
 object PrimeMain {
 

@@ -9,7 +9,7 @@ ThisBuild / organizationName := "test"
 enablePlugins(AkkaGrpcPlugin)
 
 inConfig(Compile)(Seq(
-  PB.protoSources += sourceDirectory.value / "scala/dixa/protobuf"
+  PB.protoSources += sourceDirectory.value / "scala/challenge/protobuf"
 ))
 
 lazy val root = (project in file("."))
@@ -28,5 +28,8 @@ lazy val root = (project in file("."))
       "org.scalatest"     %% "scalatest"                % "3.0.8"         % Test,
 
       "com.google.api.grpc" % "proto-google-common-protos" % "1.16.0" % "protobuf"
-)
+    )
   )
+
+// set the main class for 'sbt run'
+mainClass in (Compile, run) := Some("challenge.PrimeMain")

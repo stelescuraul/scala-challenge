@@ -1,4 +1,4 @@
-package dixa.proxy
+package challenge.proxy
 
 import akka.http.scaladsl.model.StatusCodes.NotFound
 import akka.http.scaladsl.server.Directives.complete

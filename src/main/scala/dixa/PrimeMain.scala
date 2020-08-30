@@ -22,9 +22,9 @@ object PrimeMain {
     runStreamingReplyExample()
 
     def runStreamingReplyExample(): Unit = {
-      val responseStream = client.getPrimes(PrimeRequest(10))
+      val responseStream = client.getPrimes(PrimeRequest(17))
       val done: Future[Done] =
-        responseStream.runForeach(reply => println(s"got streaming reply: ${reply.prime}"))
+        responseStream.runForeach(reply => println(s"got streaming reply: ${reply.prime.getOrElse("Nothing")}"))
 
       done.onComplete {
         case Success(_) =>
